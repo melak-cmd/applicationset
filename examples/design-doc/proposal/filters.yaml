@@ -27,6 +27,7 @@ spec:
   # }
   - git:
       repoURL: https://github.com/infra-team/cluster-deployments.git
+      revision: HEAD
       files:
       - path: config/clusters.json
       filters:
@@ -35,6 +36,7 @@ spec:
     metadata:
       name: '{{name}}-guestbook'
     spec:
+      project: default
       source:
         repoURL: https://github.com/infra-team/cluster-deployments.git
         targetRevision: "{{values.version}}"
